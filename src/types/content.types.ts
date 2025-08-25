@@ -134,79 +134,80 @@ export interface About extends BasePageConfig {
     /** Description of the introduction section */
     description: React.ReactNode;
   };
+
   /** Work experience section */
-  work: {
-    /** Whether to display work experience */
-    display: boolean;
-    /** Title for the work experience section */
-    title: string;
-    /** List of work experiences */
-    experiences: Array<{
-      /** Company name */
-      company: string;
-      /** Timeframe of employment */
-      timeframe: string;
-      /** Role or job title */
-      role: string;
-      /** Achievements at the company */
-      achievements: React.ReactNode[];
-      /** Images related to the experience */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
-    }>;
-  };
-  /** Studies/education section */
-  studies: {
-    /** Whether to display studies section */
-    display: boolean;
-    /** Title for the studies section */
-    title: string;
-    /** List of institutions attended */
-    institutions: Array<{
-      /** Institution name */
-      name: string;
-      /** Description of studies */
-      description: React.ReactNode;
-    }>;
-  };
-  /** Technical skills section */
-  technical: {
-    /** Whether to display technical skills section */
-    display: boolean;
-    /** Title for the technical skills section */
-    title: string;
-    /** List of technical skills */
-    skills: Array<{
-      /** Skill title */
-      title: string;
-      /** Skill description */
-      description?: React.ReactNode;
-      /** Skill tags */
-      tags?: Array<{
-        name: string;
-        icon?: string;
-      }>;
-      /** Images related to the skill */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
-    }>;
-  };
+  // work: {
+  //   /** Whether to display work experience */
+  //   display: boolean;
+  //   /** Title for the work experience section */
+  //   title: string;
+  //   /** List of work experiences */
+  //   experiences: Array<{
+  //     /** Company name */
+  //     company: string;
+  //     /** Timeframe of employment */
+  //     timeframe: string;
+  //     /** Role or job title */
+  //     role: string;
+  //     /** Achievements at the company */
+  //     achievements: React.ReactNode[];
+  //     /** Images related to the experience */
+  //     images?: Array<{
+  //       /** Image source path */
+  //       src: string;
+  //       /** Image alt text */
+  //       alt: string;
+  //       /** Image width ratio */
+  //       width: number;
+  //       /** Image height ratio */
+  //       height: number;
+  //     }>;
+  //   }>;
+  // };
+  // /** Studies/education section */
+  // studies: {
+  //   /** Whether to display studies section */
+  //   display: boolean;
+  //   /** Title for the studies section */
+  //   title: string;
+  //   /** List of institutions attended */
+  //   institutions: Array<{
+  //     /** Institution name */
+  //     name: string;
+  //     /** Description of studies */
+  //     description: React.ReactNode;
+  //   }>;
+  // };
+  // /** Technical skills section */
+  // technical: {
+  //   /** Whether to display technical skills section */
+  //   display: boolean;
+  //   /** Title for the technical skills section */
+  //   title: string;
+  //   /** List of technical skills */
+  //   skills: Array<{
+  //     /** Skill title */
+  //     title: string;
+  //     /** Skill description */
+  //     description?: React.ReactNode;
+  //     /** Skill tags */
+  //     tags?: Array<{
+  //       name: string;
+  //       icon?: string;
+  //     }>;
+  //     /** Images related to the skill */
+  //     images?: Array<{
+  //       /** Image source path */
+  //       src: string;
+  //       /** Image alt text */
+  //       alt: string;
+  //       /** Image width ratio */
+  //       width: number;
+  //       /** Image height ratio */
+  //       height: number;
+  //     }>;
+  //   }>;
+  // };
 }
 
 /**
