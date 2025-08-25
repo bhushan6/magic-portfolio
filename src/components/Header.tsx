@@ -10,9 +10,9 @@ import {
   display,
   person,
   about,
-  blog,
   work,
-  gallery,
+  // blog,
+  // gallery,
 } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
