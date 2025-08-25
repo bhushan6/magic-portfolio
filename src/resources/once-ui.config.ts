@@ -37,15 +37,15 @@ const protectedRoutes: ProtectedRoutesConfig = {
 
 // Import and set font for each variant
 import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Orbitron } from "next/font/google";
 
-const heading = Geist({
+const heading = Orbitron({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Orbitron({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
@@ -57,7 +57,7 @@ const label = Geist({
   display: "swap",
 });
 
-const code = Geist_Mono({
+const code = Orbitron({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
