@@ -131,13 +131,13 @@ export const Header = () => {
                       selected={pathname === "/about"}
                     />
                   </Row>
-                  {/* <Row hide s={{ hide: false }}>
+                  <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
                       selected={pathname === "/about"}
                     />
-                  </Row> */}
+                  </Row>
                 </>
               )}
               {routes["/work"] && (
