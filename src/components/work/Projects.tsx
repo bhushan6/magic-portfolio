@@ -1,17 +1,11 @@
+//@ts-nocheck
 "use client";
-import { getPosts } from "@/utils/utils";
-import { Column, Flex, Row } from "@once-ui-system/core";
-import { ProjectCard } from "@/components";
+import { Column } from "@once-ui-system/core";
 import styles from "./Projects.module.scss";
-import { useEffect, useRef, useState } from "react";
-
-interface ProjectsProps {
-  range?: [number, number?];
-  exclude?: string[];
-}
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 
 const VideoCard = ({ url }: { url: string }) => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Mute by default
   const [isHovering, setIsHovering] = useState(false);
@@ -68,8 +62,8 @@ const VideoCard = ({ url }: { url: string }) => {
     }
   };
 
-  const toggleMute = (e) => {
-    e.stopPropagation();
+  const toggleMute = (e: MouseEventHandler<HTMLButtonElement>) => {
+    // e.stopPropagation();
     setIsMuted((prevMuted) => !prevMuted);
   };
 

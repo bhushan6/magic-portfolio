@@ -121,9 +121,9 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[2, 2]} />
+        <Projects heading="" />
       </RevealFx>
-      <Projects range={[2]} />
+      <Projects heading="" />
       {/* {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
