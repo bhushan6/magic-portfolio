@@ -9,8 +9,8 @@ import {
   Work,
 } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
-import { style } from "./once-ui.config";
-import styles from "../components/Header.module.scss";
+// import { style } from "./once-ui.config";
+import styles from "./content.module.scss";
 
 console.log(styles);
 
