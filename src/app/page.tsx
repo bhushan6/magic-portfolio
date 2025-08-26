@@ -121,9 +121,10 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Projects range={[2, 2]} />
       </RevealFx>
-      {routes["/blog"] && (
+      <Projects range={[2]} />
+      {/* {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
             <Line maxWidth={48} />
@@ -142,8 +143,7 @@ export default function Home() {
             <Line maxWidth={48} />
           </Row>
         </Column>
-      )}
-      <Projects range={[2]} />
+      )} */}
       <Mailchimp />
     </Column>
   );

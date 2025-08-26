@@ -109,13 +109,7 @@ const home: Home = {
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
   },
-  subline: (
-    <div
-      style={{
-        fontSize: "32px",
-      }}
-    ></div>
-  ),
+  subline: <></>,
 };
 
 const about: About = {
