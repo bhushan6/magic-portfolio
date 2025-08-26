@@ -91,12 +91,7 @@ const home: Home = {
           }
         />
       </span>
-      <div
-        className={styles.subHeadingDiv}
-        // style={{
-        //   transform: "translateY(-15px)",
-        // }}
-      >
+      <div className={styles.subHeadingDiv}>
         We craft motion that shines bright.
       </div>
     </div>
