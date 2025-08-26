@@ -14,8 +14,8 @@
 
 @media (max-width: breakpoints.$s) {
   .position {
-    top: auto;
-    bottom: var(--static-space-24);
+    top: auto !important;
+    bottom: var(--static-space-24) !important;
   }
 
   .mask {
