@@ -9,6 +9,10 @@ import {
   Work,
 } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import { style } from "./once-ui.config";
+import styles from "../components/Header.module.scss";
+
+console.log(styles);
 
 const person: Person = {
   firstName: "",
@@ -60,12 +64,13 @@ const home: Home = {
   description: `Portfolio website showcasing work of ${person.name} ${person.role}`,
   headline: (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 0,
-        fontSize: "38px",
-      }}
+      className={styles.headingDiv}
+      // style={{
+      //   display: "flex",
+      //   flexDirection: "column",
+      //   gap: 0,
+      //   fontSize: "38px",
+      // }}
     >
       <span
         style={{
@@ -80,22 +85,20 @@ const home: Home = {
       >
         Hi, We are{" "}
         <img
-          style={{
-            // border: "1px solid red",
-            // height: "99%",
-            margin: 0,
-            padding: 0,
-            transform: "translateY(5px)",
-            objectFit: "cover",
-          }}
-          width={150}
+          className={styles.logoGif}
           src={
             "https://res.cloudinary.com/dlcjorjvc/image/upload/v1756136515/gif-comet-logo-1-ezgif.com-crop_josgi9.gif"
           }
         />
       </span>
-      {/* <br /> */}
-      <div>We craft motion that shines bright.</div>
+      <div
+        className={styles.subHeadingDiv}
+        // style={{
+        //   transform: "translateY(-15px)",
+        // }}
+      >
+        We craft motion that shines bright.
+      </div>
     </div>
   ),
   featured: {
