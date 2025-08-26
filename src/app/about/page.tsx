@@ -200,6 +200,7 @@ export default function About() {
               fillWidth
               gap="m"
               marginBottom="xl"
+              className={styles.textAlign}
             >
               {about.intro.description}
             </Column>
@@ -210,14 +211,16 @@ export default function About() {
             // id={about.work.title}
             variant="display-strong-s"
             marginBottom="m"
+            className={styles.textAlign}
           >
-            Our Purpose
+            Our Process
           </Heading>
           <Column
             textVariant="body-default-l"
             fillWidth
             gap="m"
             marginBottom="xl"
+            className={styles.textAlign}
           >
             Once we reach an agreement, our first priority is to deeply
             understand your product or service as if it were our own. From

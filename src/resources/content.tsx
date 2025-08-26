@@ -75,6 +75,7 @@ const home: Home = {
           // border: "1px solid red",
           margin: 0,
           gap: "12px",
+          flexWrap: "wrap",
         }}
       >
         Hi, We are{" "}
@@ -84,7 +85,7 @@ const home: Home = {
             // height: "99%",
             margin: 0,
             padding: 0,
-            transform: "translateY(4px)",
+            transform: "translateY(5px)",
             objectFit: "cover",
           }}
           width={150}
