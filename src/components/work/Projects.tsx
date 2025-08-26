@@ -35,7 +35,7 @@ const VideoCard = ({ url }: { url: string }) => {
           userPausedRef.current = false;
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.9 }
     );
 
     observer.observe(videoElement);
@@ -96,6 +96,7 @@ const VideoCard = ({ url }: { url: string }) => {
       left: 0,
       width: "100%",
       cursor: "pointer",
+      userSelect: "none",
     },
     playIconOverlay: {
       position: "absolute",
