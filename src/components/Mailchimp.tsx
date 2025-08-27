@@ -9,9 +9,10 @@ import {
   Background,
   Column,
   Row,
+  Spinner,
 } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function debounce<T extends (...args: any[]) => void>(
   func: T,
@@ -31,11 +32,14 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
 
+  const [loading, setLoading] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const validateEmail = (email: string): boolean => {
     if (email === "") {
-      return true;
+      return false;
     }
-
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   };
@@ -152,6 +156,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
           gap="8"
         >
           <Input
+            ref={inputRef}
             formNoValidate
             id="mce-EMAIL"
             name="EMAIL"
@@ -205,23 +210,30 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
           <div className="clear">
             <Row height="48" vertical="center">
               <Button
+                loading={loading}
                 onClick={async () => {
-                  const isEmailValid = validateEmail(email);
+                  const inputValue = inputRef.current?.value;
+                  const isEmailValid = validateEmail(inputValue || "");
                   if (!isEmailValid) return;
-
-                  const response = await fetch("/api/contact", {
-                    method: "POST",
-                    body: JSON.stringify({ email }),
-                  });
-                  const json = await response.json();
-                  console.log(json);
+                  setLoading(true);
+                  try {
+                    const response = await fetch("/api/contact", {
+                      method: "POST",
+                      body: JSON.stringify({ email: inputValue }),
+                    });
+                    const json = await response.json();
+                    console.log(json);
+                  } catch (e) {
+                  } finally {
+                    setLoading(false);
+                  }
                 }}
                 id="mc-embedded-subscribe"
                 value="Subscribe"
                 size="m"
                 fillWidth
               >
-                Send
+                {loading ? null : "Send"}
               </Button>
             </Row>
           </div>
