@@ -41,7 +41,7 @@ export default async function RootLayout({
         fonts.heading.variable,
         fonts.body.variable,
         fonts.label.variable,
-        fonts.code.variable,
+        fonts.code.variable
       )}
     >
       <head>
@@ -129,29 +129,29 @@ export default async function RootLayout({
                 width: effects.gradient.width,
                 height: effects.gradient.height,
                 tilt: effects.gradient.tilt,
-                colorStart: effects.gradient.colorStart,
+                colorStart: "comet-color",
                 colorEnd: effects.gradient.colorEnd,
               }}
               dots={{
                 display: effects.dots.display,
                 opacity: effects.dots.opacity as opacity,
                 size: effects.dots.size as SpacingToken,
-                color: effects.dots.color,
+                color: "comet-color",
               }}
               grid={{
                 display: effects.grid.display,
                 opacity: effects.grid.opacity as opacity,
-                color: effects.grid.color,
+                color: "comet-color",
                 width: effects.grid.width,
                 height: effects.grid.height,
               }}
               lines={{
                 display: effects.lines.display,
-                opacity: effects.lines.opacity as opacity,
+                opacity: 1 as opacity,
                 size: effects.lines.size as SpacingToken,
-                thickness: effects.lines.thickness,
+                thickness: 10,
                 angle: effects.lines.angle,
-                color: effects.lines.color,
+                color: "comet-color",
               }}
             />
           </RevealFx>

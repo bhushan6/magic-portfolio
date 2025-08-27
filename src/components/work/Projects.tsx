@@ -30,8 +30,6 @@ const VideoCard = ({ url }: { url: string }) => {
         } else {
           videoElement.pause();
           setIsPlaying(false);
-          // When the video goes out of view, reset the manual pause flag.
-          // This allows it to autoplay again when it comes back into view.
           userPausedRef.current = false;
         }
       },
@@ -70,7 +68,6 @@ const VideoCard = ({ url }: { url: string }) => {
   const cardStyles = {
     container: {
       width: "100%",
-      // backgroundColor: "#1f2937",
       borderRadius: "1rem",
       boxShadow:
         "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
@@ -81,7 +78,7 @@ const VideoCard = ({ url }: { url: string }) => {
       position: "absolute",
       top: "1rem",
       right: "1rem",
-      zIndex: 10,
+      zIndex: 1,
       padding: "0.5rem",
       backgroundColor: "rgba(0, 0, 0, 0.5)",
       borderRadius: "9999px",

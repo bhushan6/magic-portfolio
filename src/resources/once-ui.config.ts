@@ -18,9 +18,7 @@ const baseURL: string = "https://demo.magic-portfolio.com";
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/contact": true,
 };
 
 const display: DisplayConfig = {
@@ -156,14 +154,14 @@ const mailchimp: MailchimpConfig = {
       width: 50,
       height: 50,
       tilt: 0,
-      colorStart: "accent-background-strong",
+      colorStart: "comet-color",
       colorEnd: "static-transparent",
     },
     dots: {
       display: true,
       opacity: 20,
       size: "2",
-      color: "brand-on-background-weak",
+      color: "comet-color",
     },
     grid: {
       display: false,

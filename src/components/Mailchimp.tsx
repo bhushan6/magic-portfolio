@@ -1,11 +1,22 @@
 "use client";
 
 import { mailchimp, newsletter } from "@/resources";
-import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
+import {
+  Button,
+  Heading,
+  Input,
+  Text,
+  Background,
+  Column,
+  Row,
+} from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
+function debounce<T extends (...args: any[]) => void>(
+  func: T,
+  delay: number
+): T {
   let timeout: ReturnType<typeof setTimeout>;
   return ((...args: Parameters<T>) => {
     clearTimeout(timeout);
@@ -13,7 +24,9 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
   }) as T;
 }
 
-export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
+export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
+  ...flex
+}) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
@@ -108,7 +121,12 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
         <Heading marginBottom="s" variant="display-strong-xs">
           {newsletter.title}
         </Heading>
-        <Text wrap="balance" marginBottom="l" variant="body-default-l" onBackground="neutral-weak">
+        <Text
+          wrap="balance"
+          marginBottom="l"
+          variant="body-default-l"
+          onBackground="neutral-weak"
+        >
           {newsletter.description}
         </Text>
       </Column>
@@ -118,8 +136,11 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           display: "flex",
           justifyContent: "center",
         }}
-        action={mailchimp.action}
-        method="post"
+        // action={mailchimp.action}
+        // method="post"
+        onSubmit={async (e) => {
+          e.preventDefault();
+        }}
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
       >
@@ -158,10 +179,21 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
             />
           </div>
           <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
+            <div
+              className="response"
+              id="mce-error-response"
+              style={{ display: "none" }}
+            ></div>
+            <div
+              className="response"
+              id="mce-success-response"
+              style={{ display: "none" }}
+            ></div>
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+          <div
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-5000px" }}
+          >
             <input
               type="text"
               readOnly
@@ -172,8 +204,24 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           </div>
           <div className="clear">
             <Row height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
+              <Button
+                onClick={async () => {
+                  const isEmailValid = validateEmail(email);
+                  if (!isEmailValid) return;
+
+                  const response = await fetch("/api/contact", {
+                    method: "POST",
+                    body: JSON.stringify({ email }),
+                  });
+                  const json = await response.json();
+                  console.log(json);
+                }}
+                id="mc-embedded-subscribe"
+                value="Subscribe"
+                size="m"
+                fillWidth
+              >
+                Send
               </Button>
             </Row>
           </div>
