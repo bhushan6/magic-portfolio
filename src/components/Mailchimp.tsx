@@ -45,7 +45,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = inputRef.current?.value || "";
     setEmail(value);
 
     if (!validateEmail(value)) {
