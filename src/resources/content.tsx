@@ -7,10 +7,10 @@ console.log(styles);
 const person: Person = {
   firstName: "",
   lastName: "",
-  name: `Commet`,
+  name: `Comet`,
   role: "Design Agency",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  email: "comett.motion@gmail.com",
   location: "Asia/Kolkata",
   languages: ["English", "Hindi"],
 };
@@ -29,16 +29,16 @@ const social: Social = [
   //   icon: "github",
   //   link: "https://github.com/once-ui-system",
   // },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
+  // {
+  //   name: "LinkedIn",
+  //   icon: "linkedin",
+  //   link: "https://www.linkedin.com/company/once-ui/",
+  // },
+  // {
+  //   name: "Threads",
+  //   icon: "threads",
+  //   link: "https://www.threads.com/@once_ui",
+  // },
   {
     name: "Email",
     icon: "email",
@@ -139,7 +139,7 @@ const about: About = {
 
 const contact: Work = {
   path: "/contact",
-  label: "Conatct",
+  label: "Contact",
   title: ``,
   description: ``,
 };

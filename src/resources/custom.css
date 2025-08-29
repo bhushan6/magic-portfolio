@@ -1,3 +1,7 @@
 :root {
   --comet-color: #b589c8;
 }
+
+* {
+  font-family: var(--font-heading) !important;
+}

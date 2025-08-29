@@ -11,6 +11,7 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { LogoHeader } from "@/components/LogoHeader";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -90,9 +91,10 @@ export default function About() {
                 />
               </Row>
             )} */}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
+            {/* <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
-            </Heading>
+            </Heading> */}
+            <LogoHeader />
             <Text
               className={styles.textAlign}
               variant="display-default-xs"

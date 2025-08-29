@@ -61,7 +61,7 @@ const VideoCard = ({ url }: { url: string }) => {
   };
 
   const toggleMute = (e: MouseEventHandler<HTMLButtonElement>) => {
-    // e.stopPropagation();
+    e.stopPropagation();
     setIsMuted((prevMuted) => !prevMuted);
   };
 
@@ -250,7 +250,7 @@ const VideoCard = ({ url }: { url: string }) => {
 export function Projects({ heading }: { heading: string }) {
   return (
     <>
-      <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
+      <Column fillWidth paddingX="l">
         <div
           style={{
             padding: "0px 20px",

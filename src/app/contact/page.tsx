@@ -2,10 +2,12 @@ import { Column, Heading, Schema } from "@once-ui-system/core";
 import { baseURL, about, person } from "@/resources";
 import { contact } from "@/resources/content";
 import ContactForm from "@/components/contact/ContactForm";
+import { LogoHeader } from "@/components/LogoHeader";
 
 export default function Work() {
   return (
     <Column maxWidth="m" paddingTop="24">
+      <LogoHeader />
       <Schema
         as="webPage"
         baseURL={baseURL}
