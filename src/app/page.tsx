@@ -12,6 +12,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
+import { contact } from "@/resources/content";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -73,14 +74,18 @@ export default function Home() {
             <Button
               id="about"
               data-border="rounded"
-              href={about.path}
+              href={contact.path}
               variant="secondary"
               size="m"
               weight="default"
               arrowIcon
+              style={{
+                background:
+                  "linear-gradient(180deg,rgba(231, 68, 78, 1) 0%, rgba(177, 81, 219, 1) 100%)",
+              }}
             >
               <Row gap="8" vertical="center" paddingRight="4">
-                {about.title}
+                Contact Us
               </Row>
             </Button>
           </RevealFx>

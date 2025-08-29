@@ -1,8 +1,9 @@
 //@ts-nocheck
 "use client";
-import { Column } from "@once-ui-system/core";
+import { Background, Column } from "@once-ui-system/core";
 import styles from "./Projects.module.scss";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { effects } from "@/resources";
 
 const VideoCard = ({ url }: { url: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -267,10 +268,27 @@ export function Projects({ heading }: { heading: string }) {
           </h1>
         </div>
         <div className={styles["grid-container"]}>
+          <Background
+            style={{
+              position: "absolute",
+              inset: 0,
+            }}
+            gradient={{
+              display: true,
+              opacity: 40,
+              x: 50,
+              y: 50,
+              width: 40,
+              height: 40,
+              tilt: false,
+              colorStart: "comet-color",
+              colorEnd: effects.gradient.colorEnd,
+            }}
+          />
           <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756470112/1-real-estate-ai-assistant-max-m-1078_utvhia.mp4" />
           <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756470112/1-real-estate-ai-assistant-max-m-1078_utvhia.mp4" />
+          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
+          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
         </div>
       </Column>
     </>
