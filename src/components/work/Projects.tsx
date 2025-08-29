@@ -73,6 +73,7 @@ const VideoCard = ({ url }: { url: string }) => {
         "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
       overflow: "hidden",
       position: "relative",
+      alignSelf: "center",
     },
     muteButton: {
       position: "absolute",
@@ -267,9 +268,9 @@ export function Projects({ heading }: { heading: string }) {
         </div>
         <div className={styles["grid-container"]}>
           <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
+          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756470112/1-real-estate-ai-assistant-max-m-1078_utvhia.mp4" />
           <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
+          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756470112/1-real-estate-ai-assistant-max-m-1078_utvhia.mp4" />
         </div>
       </Column>
     </>
