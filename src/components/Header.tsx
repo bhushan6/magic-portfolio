@@ -89,27 +89,24 @@ export const Header = () => {
           position: "fixed",
         }}
       >
-        <Row
+        {/* <Row
           paddingLeft="12"
           fillWidth
           vertical="center"
           textVariant="body-default-s"
         >
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
-        </Row>
+        </Row> */}
         <Row fillWidth horizontal="center">
           <Row
-            background="page"
+            // ˀ
             border="neutral-alpha-weak"
             radius="m-4"
             shadow="l"
             padding="4"
             horizontal="center"
             zIndex={1}
-            style={{
-              background:
-                "linear-gradient(180deg,rgba(231, 68, 78, 1) 0%, rgba(177, 81, 219, 1) 100%)",
-            }}
+            background="neutral-alpha-weak"
           >
             <Row
               gap="4"
@@ -172,7 +169,7 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
+        {/* <Flex fillWidth horizontal="end" vertical="center">
           <Flex
             paddingRight="12"
             horizontal="end"
@@ -184,7 +181,7 @@ export const Header = () => {
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Row>
     </>
   );
