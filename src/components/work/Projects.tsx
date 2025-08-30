@@ -5,7 +5,7 @@ import styles from "./Projects.module.scss";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { effects } from "@/resources";
 
-const VideoCard = ({ url, style }: { url: string; style: any }) => {
+const VideoCard = ({ url, className }: { url: string; className?: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Mute by default
@@ -75,7 +75,6 @@ const VideoCard = ({ url, style }: { url: string; style: any }) => {
       overflow: "hidden",
       position: "relative",
       alignSelf: "center",
-      ...style,
     },
     muteButton: {
       position: "absolute",
@@ -156,6 +155,7 @@ const VideoCard = ({ url, style }: { url: string; style: any }) => {
 
   return (
     <div
+      className={className}
       style={cardStyles.container}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -259,36 +259,15 @@ export function Projects({
 }) {
   const numberOfVideos = videos.length;
 
-  const getGridStyles = () => {
-    switch (numberOfVideos) {
-      case 2:
-        return {
-          gridTemplateColumns: "1fr 1fr",
-          gridTemplateRows: undefined,
-        };
-      case 3:
-        return {
-          gridTemplateColumns: "1fr 1fr",
-          gridTemplateRows: "1fr 1fr 1fr",
-        };
-      case 4:
-        return {
-          gridTemplateColumns: "1fr 1fr",
-          gridTemplateRows: "1fr 1fr",
-        };
-      default:
-        break;
-    }
+  const getGridContainerClass = () => {
+    return `${styles["grid-container"]} ${styles[`videos-${numberOfVideos}`]}`;
   };
 
-  const getVideoItemStyles = (index: number) => {
+  const getVideoItemClass = (index: number) => {
     if (numberOfVideos === 3 && index === 2) {
-      return {
-        gridRow: "span 2",
-        gridColumn: "span 2",
-      };
+      return styles["video-item-3-last"];
     }
-    return {};
+    return "";
   };
   return (
     <>
@@ -307,7 +286,7 @@ export function Projects({
             {heading}
           </h1>
         </div>
-        <div className={styles["grid-container"]} style={getGridStyles()}>
+        <div className={getGridContainerClass()}>
           <Background
             style={{
               position: "absolute",
@@ -329,7 +308,7 @@ export function Projects({
             <VideoCard
               key={video}
               url={video}
-              style={getVideoItemStyles(index)}
+              className={getVideoItemClass(index)}
             />
           ))}
         </div>
