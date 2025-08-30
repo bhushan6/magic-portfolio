@@ -5,7 +5,7 @@ import styles from "./Projects.module.scss";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { effects } from "@/resources";
 
-const VideoCard = ({ url }: { url: string }) => {
+const VideoCard = ({ url, style }: { url: string; style: any }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Mute by default
@@ -75,6 +75,7 @@ const VideoCard = ({ url }: { url: string }) => {
       overflow: "hidden",
       position: "relative",
       alignSelf: "center",
+      ...style,
     },
     muteButton: {
       position: "absolute",
@@ -249,7 +250,46 @@ const VideoCard = ({ url }: { url: string }) => {
   );
 };
 
-export function Projects({ heading }: { heading: string }) {
+export function Projects({
+  heading,
+  videos,
+}: {
+  heading: string;
+  videos: string[];
+}) {
+  const numberOfVideos = videos.length;
+
+  const getGridStyles = () => {
+    switch (numberOfVideos) {
+      case 2:
+        return {
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: undefined,
+        };
+      case 3:
+        return {
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "1fr 1fr 1fr",
+        };
+      case 4:
+        return {
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "1fr 1fr",
+        };
+      default:
+        break;
+    }
+  };
+
+  const getVideoItemStyles = (index: number) => {
+    if (numberOfVideos === 3 && index === 2) {
+      return {
+        gridRow: "span 2",
+        gridColumn: "span 2",
+      };
+    }
+    return {};
+  };
   return (
     <>
       <Column fillWidth paddingX="l">
@@ -264,10 +304,10 @@ export function Projects({ heading }: { heading: string }) {
               margin: 0,
             }}
           >
-            Motion
+            {heading}
           </h1>
         </div>
-        <div className={styles["grid-container"]}>
+        <div className={styles["grid-container"]} style={getGridStyles()}>
           <Background
             style={{
               position: "absolute",
@@ -285,10 +325,13 @@ export function Projects({ heading }: { heading: string }) {
               colorEnd: effects.gradient.colorEnd,
             }}
           />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
-          <VideoCard url="https://res.cloudinary.com/dlcjorjvc/video/upload/v1756218212/HEVC-1-crypto-explainer-video-max-m-1078_vmhvgc.mp4" />
+          {videos.map((video, index) => (
+            <VideoCard
+              key={video}
+              url={video}
+              style={getVideoItemStyles(index)}
+            />
+          ))}
         </div>
       </Column>
     </>

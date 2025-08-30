@@ -92,9 +92,29 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects heading="" />
+        <Projects
+          heading="Explainers"
+          videos={[
+            "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560272/B-Comp_1_22_fmpwhm.mp4",
+            "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560265/new-herd-explainer-video-max-m-1078_pflim9.mp4",
+            "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560263/1-real-estate-ai-assistant-max-m-1078_zrod1j.mp4",
+          ]}
+        />
       </RevealFx>
-      <Projects heading="" />
+      <Projects
+        heading="3D"
+        videos={[
+          "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560427/Lipstick_Animation_04_m8y8sw.mp4",
+          "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560424/Drink_wtare_Product_Animation_rn2rf1.mp4",
+        ]}
+      />
+      <Projects
+        heading="Podcasts"
+        videos={[
+          "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560396/SSYouTube.online_Smith_2nd_Project_Personal_Brand_Vol_1_1080p_me277x.mp4",
+          "https://res.cloudinary.com/dlcjorjvc/video/upload/v1756560393/1-mo_iy45tv.mp4",
+        ]}
+      />
 
       <Mailchimp />
     </Column>

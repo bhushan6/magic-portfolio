@@ -106,6 +106,10 @@ export const Header = () => {
             padding="4"
             horizontal="center"
             zIndex={1}
+            style={{
+              background:
+                "linear-gradient(180deg,rgba(231, 68, 78, 1) 0%, rgba(177, 81, 219, 1) 100%)",
+            }}
           >
             <Row
               gap="4"
